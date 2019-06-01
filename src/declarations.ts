@@ -12,8 +12,17 @@ interface Ethereum {
   removeListener?: (eventName: string, listener: Function) => void
 }
 
+interface DEXON {
+  autoRefreshOnNetworkChange?: boolean
+  isDekuSan?: boolean
+  enable: () => Promise<void>
+  on?: (eventName: string, listener: Function) => void
+  removeListener?: (eventName: string, listener: Function) => void
+}
+
 declare interface Window {
   ethereum?: Ethereum
+  dexon?: DEXON
   web3?: any
 }
 
